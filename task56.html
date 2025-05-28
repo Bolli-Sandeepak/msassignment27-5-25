@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Navigation Bar</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #000;
+            display: flex;
+            width: fit-content;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            border-bottom: 5px solid orange;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .navbar li {
+            position: relative;
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .navbar li:not(:last-child) a {
+            border-right: 1px solid #333;
+        }
+
+        .navbar a:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Login</a></li>
+    </ul>
+
+</body>
+</html>
