@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding-top: 50px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            max-width: 900px;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .task-header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 5px;
+            width: fit-content;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 15px) 100%, 0% 100%);
+        }
+
+        .content-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .vertical-nav-section {
+            flex: 1;
+            min-width: 200px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vertical-nav-section h3 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .vertical-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #cce;
+            background-color: #e0f2f7;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .vertical-nav li {
+            padding: 12px 15px;
+            border-bottom: 1px solid #cce;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .vertical-nav li:last-child {
+            border-bottom: none;
+        }
+
+        .vertical-nav li:hover {
+            background-color: #cce;
+        }
+
+        .vertical-nav .active {
+            background-color: orange;
+            color: white;
+            font-weight: bold;
+            border-bottom: 1px solid orange;
+        }
+
+        .vertical-nav-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #a7d9b5, #7fc9a5, #5ac694, #2bb78a);
+            transform: rotate(45deg);
+            opacity: 0.3;
+            border-radius: 20px;
+            z-index: 0;
+        }
+
+
+        .horizontal-nav-section {
+            flex: 2;
+            min-width: 300px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .horizontal-nav-section h3 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .horizontal-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .horizontal-nav li {
+            padding: 10px 15px;
+            border-right: 1px solid #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .horizontal-nav li:last-child {
+            border-right: none;
+        }
+
+        .horizontal-nav li:hover {
+            background-color: #eee;
+        }
+
+        .horizontal-nav .active {
+            background-color: #777;
+            color: white;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .content-area {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="task-header">
+            Task
+        </div>
+
+        <div class="content-area">
+            <div class="vertical-nav-section">
+                <h3>Vertical Navigation Bar</h3>
+                <ul class="vertical-nav">
+                    <li class="active">Home</li>
+                    <li>Java</li>
+                    <li>CSS</li>
+                    <li>HTML</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+
+            <div class="horizontal-nav-section">
+                <h3>Horizontal Navigation Bar</h3>
+                <ul class="horizontal-nav">
+                    <li class="active">Home</li>
+                    <li>Java</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
